@@ -55,11 +55,16 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rg
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--gris-vert)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
 .nav img{height:52px;width:auto;display:block}
-.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;list-style:none;margin:0;padding:0;font-size:.9rem}
 .nav ul a{text-decoration:none;font-weight:700;color:var(--encre)}
 .nav ul a:hover{color:var(--bleu)}
 .nav .btn{padding:11px 18px;font-size:.88rem}
-@media (max-width:860px){.nav ul{display:none}}
+.menu-mob{display:none;position:relative}
+.menu-mob summary{list-style:none;cursor:pointer;font-family:var(--titre);text-transform:uppercase;color:var(--bleu-fonce);border:2px solid var(--bleu);border-radius:999px;padding:9px 16px}
+.menu-mob summary::-webkit-details-marker{display:none}
+.menu-mob ul{position:absolute;right:0;top:calc(100% + 8px);display:grid;gap:4px;background:var(--blanc);border-radius:16px;padding:12px;min-width:240px;box-shadow:0 10px 30px rgba(33,64,75,.18);font-size:1rem}
+.menu-mob ul a{display:block;padding:8px 10px}
+@media (max-width:1100px){.nav ul.menu-desk{display:none}.menu-mob{display:block}.nav>.btn{display:none}}
 
 /* Hero */
 .hero{overflow:hidden;padding-block:clamp(40px,6vw,80px) clamp(64px,8vw,110px)}
@@ -188,6 +193,8 @@ footer a{color:var(--orange)}
 .lm-ville{background:#fff;border:0;border-radius:999px;padding:2px 10px;font-family:var(--texte);font-weight:700;color:var(--bleu-fonce);box-shadow:0 1px 4px rgba(33,64,75,.25)}
 .lm-ville::before{display:none}
 .lm-esat{background:var(--orange);color:var(--encre)}
+.lm-esat-logo{background:#fff;border-radius:12px;padding:6px 10px;box-shadow:0 2px 10px rgba(33,64,75,.3);margin-left:14px!important}
+.lm-esat-logo img{width:100%;height:100%;object-fit:contain;display:block}
 .lm-pin{background:var(--orange);border:3px solid var(--blanc);border-radius:50%;box-shadow:0 2px 8px rgba(33,64,75,.35)}
 @media (max-width:860px){.territoire{grid-template-columns:1fr}.carte{height:300px}}
 .volumes{margin-top:24px;background:var(--orange);color:var(--encre);border-radius:var(--r);padding:20px 24px;display:grid;gap:4px}
@@ -211,13 +218,29 @@ footer a{color:var(--orange)}
 <header>
   <div class="wrap nav">
     <a href="#top" aria-label="Lave-Moi ! accueil"><img src="assets/logo.png" alt="Lave-Moi !"></a>
-    <ul>
-      <li><a href="#centre">Le centre</a></li>
+    <ul class="menu-desk">
+      <li><a href="#centre">Le centre de lavage</a></li>
       <li><a href="#esat">Local et inclusif</a></li>
       <li><a href="#clients">Pour qui</a></li>
       <li><a href="#fonctionnement">Comment ça marche</a></li>
+      <li><a href="#confiance">Ils nous font confiance</a></li>
+      <li><a href="#reglementation">Pourquoi maintenant</a></li>
+      <li><a href="#soutiens">Ils nous soutiennent</a></li>
     </ul>
     <a class="btn btn-orange" href="#contact">Nous contacter</a>
+    <details class="menu-mob">
+      <summary aria-label="Ouvrir le menu">Menu</summary>
+      <ul>
+        <li><a href="#centre">Le centre de lavage</a></li>
+        <li><a href="#esat">Local et inclusif</a></li>
+        <li><a href="#clients">Pour qui</a></li>
+        <li><a href="#fonctionnement">Comment ça marche</a></li>
+        <li><a href="#confiance">Ils nous font confiance</a></li>
+        <li><a href="#reglementation">Pourquoi maintenant</a></li>
+        <li><a href="#soutiens">Ils nous soutiennent</a></li>
+        <li><a href="#contact">Nous contacter</a></li>
+      </ul>
+    </details>
   </div>
 </header>
 
@@ -297,10 +320,10 @@ footer a{color:var(--orange)}
       <p class="eyebrow">Local et inclusif</p>
       <h2 style="margin-top:10px">Un centre de proximité, au cœur de la Côte d'Opale</h2>
       <div class="territoire">
-        <div id="carte" class="carte" role="img" aria-label="Carte du territoire d'action : le triangle Calais, Saint-Omer, Berck, avec le centre de lavage à Saint-Léonard"></div>
+        <div id="carte" class="carte" role="img" aria-label="Carte du territoire d'action : la zone Calais, Saint-Omer, Berck, Boulogne-sur-Mer, avec le centre de lavage à Saint-Léonard"></div>
         <div class="territoire-texte">
           <p><b>Notre territoire d'action</b></p>
-          <p>Nous travaillons avec les producteurs, distributeurs et collectivités situés entre <b>Calais</b>, <b>Saint-Omer</b> et <b>Berck</b>. Le centre de lavage est au milieu de ce territoire, à Saint-Léonard, aux portes de Boulogne-sur-Mer.</p>
+          <p>Nous travaillons avec les producteurs, distributeurs et collectivités situés entre <b>Calais</b>, <b>Saint-Omer</b>, <b>Berck</b> et <b>Boulogne-sur-Mer</b>. Le centre de lavage est au cœur de ce territoire, à Saint-Léonard, aux portes de Boulogne-sur-Mer.</p>
           <p>Moins de transport entre vos ateliers et le centre, c'est un réemploi plus économique et plus sobre.</p>
           <p>Vous êtes un peu plus loin ? Contactez-nous, on regarde ensemble.</p>
         </div>
@@ -376,7 +399,7 @@ footer a{color:var(--orange)}
     </div>
   </section>
 
-  <section class="bande" style="background:var(--blanc)" aria-labelledby="t-loi">
+  <section id="reglementation" class="bande" style="background:var(--blanc)" aria-labelledby="t-loi">
     <div class="wrap">
       <p class="eyebrow">Pourquoi maintenant</p>
       <h2 id="t-loi" style="margin-top:10px">Le réemploi devient une obligation</h2>
@@ -445,17 +468,19 @@ footer a{color:var(--orange)}
 (function(){
   if(!window.L) return;
   var esat=[50.6905,1.6190]; // 76 bd de la Liane, Saint-Léonard
-  var villes=[["Calais",[50.9513,1.8587]],["Saint-Omer",[50.7500,2.2520]],["Berck",[50.4085,1.5928]]];
-  var map=L.map('carte',{scrollWheelZoom:false});
+  var villes=[["Calais",[50.9513,1.8587]],["Saint-Omer",[50.7500,2.2520]],["Berck",[50.4085,1.5928]],["Boulogne-sur-Mer",[50.7264,1.6047]]];
+  var zone=[[50.9600,1.8300],[50.7500,2.2520],[50.4085,1.5928],[50.7264,1.5650]];
+  var map=L.map('carte',{scrollWheelZoom:false,zoomSnap:0.25});
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap'}).addTo(map);
-  var tri=L.polygon(villes.map(function(v){return v[1]}),{color:'#4e8da3',weight:3,dashArray:'8 6',fillColor:'#a5d3b7',fillOpacity:.3}).addTo(map);
+  var tri=L.polygon(zone,{color:'#4e8da3',weight:3,dashArray:'8 6',fillColor:'#a5d3b7',fillOpacity:.3}).addTo(map);
   villes.forEach(function(v){
     L.circleMarker(v[1],{radius:6,color:'#fff',weight:2,fillColor:'#4e8da3',fillOpacity:1}).addTo(map)
-      .bindTooltip(v[0],{permanent:true,direction:'top',offset:[0,-6],className:'lm-ville'});
+      .bindTooltip(v[0],{permanent:true,direction:v[0]==="Boulogne-sur-Mer"?'left':'top',offset:v[0]==="Boulogne-sur-Mer"?[-8,0]:[0,-6],className:'lm-ville'});
   });
-  L.marker(esat,{icon:L.divIcon({className:'lm-pin',iconSize:[24,24]})}).addTo(map)
-    .bindTooltip("Lave-Moi ! · ESAT du Boulonnais",{permanent:true,direction:'right',offset:[10,0],className:'lm-ville lm-esat'});
-  map.fitBounds(tri.getBounds(),{paddingTopLeft:[40,50],paddingBottomRight:[40,30]});
+  L.marker(esat,{icon:L.divIcon({className:'lm-esat-logo',html:'<img src="assets/logos/esat.png" alt="ESAT du Boulonnais">',iconSize:[96,46],iconAnchor:[0,23]})}).addTo(map)
+    .bindPopup("<b>Lave-Moi ! à l'ESAT du Boulonnais</b><br>76 boulevard de la Liane, Saint-Léonard");
+  L.circleMarker(esat,{radius:7,color:'#fff',weight:3,fillColor:'#f9b567',fillOpacity:1}).addTo(map);
+  map.fitBounds(tri.getBounds(),{paddingTopLeft:[110,40],paddingBottomRight:[30,20]});
 })();
 </script>
 </body>
