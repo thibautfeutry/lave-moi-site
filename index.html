@@ -180,9 +180,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-bet
 footer a{color:var(--orange)}
 
 /* V2 */
-.contenants{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:22px}
+.contenants{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,max-content);gap:12px 28px}
+@media (max-width:420px){.contenants{grid-template-columns:1fr}}
 .contenants li{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.92rem;color:var(--bleu-fonce)}
 .contenants svg{width:26px;height:42px;flex:none}
+.contenants svg.large{width:44px;height:28px}
 .adresse{margin-top:26px;background:var(--blanc);border-radius:16px;padding:16px 18px;display:flex;gap:18px;align-items:center;border-left:6px solid var(--orange)}
 .adresse img{width:110px;height:auto;flex:none}
 .adresse div{display:grid;gap:2px}
@@ -259,6 +261,7 @@ footer a{color:var(--orange)}
           <li><svg viewBox="0 0 40 64" aria-hidden="true"><path d="M16 3h8v12c0 4 6 8 6 14v30a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V29c0-6 6-10 6-14z" fill="none" stroke="var(--bleu)" stroke-width="3" stroke-linejoin="round"/><rect x="10" y="34" width="20" height="12" fill="var(--orange)"/></svg>Bouteille de bière</li>
           <li><svg viewBox="0 0 40 64" aria-hidden="true"><path d="M14 3h12v6l4 8v42a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V17l4-8z" fill="none" stroke="var(--bleu)" stroke-width="3" stroke-linejoin="round"/><path d="M10 30h20v29a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2z" fill="var(--vert)"/></svg>Bouteille de lait</li>
           <li><svg viewBox="0 0 40 64" aria-hidden="true"><path d="M7 14h26l-4 46a2 2 0 0 1-2 2H13a2 2 0 0 1-2-2z" fill="none" stroke="var(--bleu)" stroke-width="3" stroke-linejoin="round"/><path d="M5 14h30" stroke="var(--bleu)" stroke-width="3" stroke-linecap="round"/><path d="M9 34h22l-2 22H11z" fill="var(--orange)"/></svg>Gobelet réutilisable</li>
+          <li><svg class="large" viewBox="0 0 64 40" aria-hidden="true"><path d="M5 12h54l-4 20a3 3 0 0 1-3 2.4H12a3 3 0 0 1-3-2.4z" fill="none" stroke="var(--bleu)" stroke-width="3" stroke-linejoin="round"/><path d="M11 18h42l-2.6 11H13.6z" fill="var(--vert)"/><path d="M25 12v22M39 12v22" stroke="var(--bleu)" stroke-width="2.5"/><path d="M2 12h60" stroke="var(--bleu)" stroke-width="3" stroke-linecap="round"/></svg>Plateau-repas</li>
         </ul>
       </div>
       <div class="photo-rond">
