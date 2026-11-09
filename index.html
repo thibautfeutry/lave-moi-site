@@ -99,7 +99,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .fiche span{font-size:.92rem}
 .mosaique{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .mosaique img{width:100%;height:100%;object-fit:cover;border-radius:var(--r);display:block}
-.mosaique img:first-child{grid-row:span 2;aspect-ratio:3/4}
+.mosaique img:first-child{grid-row:span 3;aspect-ratio:auto}
 .mosaique img:not(:first-child){aspect-ratio:4/3}
 @media (max-width:860px){.deux{grid-template-columns:1fr}.fiche{grid-template-columns:1fr 1fr 1fr}}
 @media (max-width:480px){.fiche{grid-template-columns:1fr}}
@@ -177,12 +177,17 @@ footer a{color:var(--orange)}
 .contenants{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:22px}
 .contenants li{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.92rem;color:var(--bleu-fonce)}
 .contenants svg{width:26px;height:42px;flex:none}
-.adresse{margin-top:26px;background:var(--blanc);border-radius:16px;padding:16px 18px;display:grid;gap:2px;border-left:6px solid var(--orange)}
+.adresse{margin-top:26px;background:var(--blanc);border-radius:16px;padding:16px 18px;display:flex;gap:18px;align-items:center;border-left:6px solid var(--orange)}
+.adresse img{width:110px;height:auto;flex:none}
+.adresse div{display:grid;gap:2px}
 .adresse b{font-family:var(--titre);text-transform:uppercase;color:var(--bleu)}
 .territoire{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;margin-top:32px;align-items:center}
 .territoire>*{min-width:0}
 .carte{height:380px;border-radius:var(--r);overflow:hidden;background:var(--gris-vert);border:4px solid var(--blanc);z-index:0}
 .territoire-texte p+p{margin-top:12px}
+.lm-ville{background:#fff;border:0;border-radius:999px;padding:2px 10px;font-family:var(--texte);font-weight:700;color:var(--bleu-fonce);box-shadow:0 1px 4px rgba(33,64,75,.25)}
+.lm-ville::before{display:none}
+.lm-esat{background:var(--orange);color:var(--encre)}
 .lm-pin{background:var(--orange);border:3px solid var(--blanc);border-radius:50%;box-shadow:0 2px 8px rgba(33,64,75,.35)}
 @media (max-width:860px){.territoire{grid-template-columns:1fr}.carte{height:300px}}
 .volumes{margin-top:24px;background:var(--orange);color:var(--encre);border-radius:var(--r);padding:20px 24px;display:grid;gap:4px}
@@ -193,6 +198,8 @@ footer a{color:var(--orange)}
 .consignes .regles{margin-top:0}
 @media (max-width:560px){.consignes{flex-direction:column;align-items:flex-start}}
 .logos{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px}
+.logos{align-items:center;gap:20px 34px}
+.logos img{height:88px;width:auto;max-width:200px;object-fit:contain;background:#fff;border-radius:16px;padding:12px 18px;box-sizing:border-box}
 .logos .chip{background:var(--blanc);border:1px solid var(--vert);padding:12px 20px;font-size:1rem}
 .soutiens{background:var(--blanc);padding-block:56px}
 .mention{margin-top:22px;font-size:.92rem;max-width:60em}
@@ -223,7 +230,7 @@ footer a{color:var(--orange)}
         <span class="baseline">Vers le retour du réemploi sur la Côte d'Opale</span>
         <p class="eyebrow">Centre de lavage de contenants réemployables</p>
         <h1 style="margin-top:12px">Ramenez vos contenants, on les lave pour les réemployer&nbsp;!</h1>
-        <p class="lead">Lave-Moi ! lave les <strong>bouteilles</strong> et <strong>contenants</strong> réemployables des producteurs, distributeurs et traiteurs du Boulonnais, à moins de 25 km de chez eux, avec les travailleurs de l'ESAT du Boulonnais.</p>
+        <p class="lead">Lave-Moi ! lave les <strong>bouteilles</strong> et <strong>contenants</strong> réemployables des producteurs, distributeurs et traiteurs de la Côte d'Opale, au plus près de chez eux, avec les travailleurs de l'ESAT du Boulonnais.</p>
         <div class="ctas">
           <a class="btn btn-orange" href="#contact">Tester vos contenants</a>
           <a class="btn btn-ligne" href="#fonctionnement">Comment ça marche</a>
@@ -235,7 +242,7 @@ footer a{color:var(--orange)}
         </ul>
       </div>
       <div class="photo-rond">
-        <img src="assets/centre-machine.jpg" alt="L'équipe dans le centre de lavage, devant la laveuse et une caisse de bouteilles">
+        <img src="assets/centre-controle.jpg" alt="Contrôle des bouteilles lavées au centre Lave-Moi !">
         <div class="pastille"><strong>2026</strong>Phase pilote : premiers runs de lavage de bouteilles</div>
       </div>
     </div>
@@ -271,14 +278,16 @@ footer a{color:var(--orange)}
         <p>Le meilleur déchet est celui qu'on ne produit pas. Notre centre de lavage est installé dans les locaux de l'ESAT du Boulonnais : vos bouteilles et contenants y sont lavés, contrôlés et rendus prêts à être remplis, au lieu de partir au recyclage après un seul usage.</p>
         <p>Les lavages sont organisés par runs, selon le type de contenant et le produit, pour respecter la sécurité alimentaire et vos contraintes de production.</p>
         <div class="adresse">
-          <b>Lave-Moi ! à l'ESAT du Boulonnais</b>
-          <span>[ADRESSE À CONFIRMER], 62360 Saint-Léonard</span>
+          <img src="assets/logos/esat.png" alt="ESAT du Boulonnais" width="110">
+          <div><b>Lave-Moi ! à l'ESAT du Boulonnais</b>
+          <span>76 boulevard de la Liane, 62360 Saint-Léonard</span></div>
         </div>
       </div>
       <div class="mosaique">
-        <img src="assets/centre-caisses.jpg" alt="Caisses de bouteilles et paniers de lavage dans le centre">
-        <img src="assets/centre-equipe.jpg" alt="Les associés et partenaires dans le centre, près des postes inox">
-        <img src="assets/centre-machine.jpg" alt="Présentation de la laveuse frontale">
+        <img src="assets/centre-bouteilles.jpg" alt="Palette de bouteilles lavées, prêtes à repartir chez le producteur">
+        <img src="assets/centre-laveuse.jpg" alt="La laveuse et les paniers de lavage">
+        <img src="assets/centre-gobelets.jpg" alt="Gobelets réutilisables lavés">
+        <img src="assets/centre-chantier.jpg" alt="Aménagement du centre de lavage en mars 2026">
       </div>
     </div>
   </section>
@@ -286,19 +295,20 @@ footer a{color:var(--orange)}
   <section id="esat" class="esat">
     <div class="wrap">
       <p class="eyebrow">Local et inclusif</p>
-      <h2 style="margin-top:10px">Un centre de proximité, à moins de 25&nbsp;km de chez vous</h2>
+      <h2 style="margin-top:10px">Un centre de proximité, au cœur de la Côte d'Opale</h2>
       <div class="territoire">
-        <div id="carte" class="carte" role="img" aria-label="Carte du territoire d'action : 25 km autour du centre de lavage à Saint-Léonard"></div>
+        <div id="carte" class="carte" role="img" aria-label="Carte du territoire d'action : le triangle Calais, Saint-Omer, Berck, avec le centre de lavage à Saint-Léonard"></div>
         <div class="territoire-texte">
           <p><b>Notre territoire d'action</b></p>
-          <p>Nous travaillons avec les producteurs, distributeurs et collectivités situés dans un rayon d'environ 25&nbsp;km autour du centre : Boulogne-sur-Mer, Wimereux, Outreau, Le Portel, Desvres, Samer, Marquise et les communes voisines.</p>
+          <p>Nous travaillons avec les producteurs, distributeurs et collectivités situés entre <b>Calais</b>, <b>Saint-Omer</b> et <b>Berck</b>. Le centre de lavage est au milieu de ce territoire, à Saint-Léonard, aux portes de Boulogne-sur-Mer.</p>
+          <p>Moins de transport entre vos ateliers et le centre, c'est un réemploi plus économique et plus sobre.</p>
           <p>Vous êtes un peu plus loin ? Contactez-nous, on regarde ensemble.</p>
         </div>
       </div>
       <div class="piliers">
         <div class="pilier">
           <h3>Circuit court</h3>
-          <ul><li>Solution locale, à moins de 25 km</li><li>Des emplois non délocalisables dans le Boulonnais</li></ul>
+          <ul><li>Solution locale, au cœur de la Côte d'Opale</li><li>Des emplois non délocalisables dans le Boulonnais</li></ul>
         </div>
         <div class="pilier">
           <h3>Économique</h3>
@@ -358,9 +368,10 @@ footer a{color:var(--orange)}
       <p class="eyebrow">Ils nous font confiance</p>
       <h2 style="margin-top:10px">Les premiers producteurs du réemploi local</h2>
       <div class="logos">
-        <span class="chip">Brasserie du Glout</span>
-        <span class="chip">Bulles d'Opale</span>
-        <span class="chip">Les Jardins du Boulonnais</span>
+        <img src="assets/logos/prairies.png" alt="Lait Prairies du Boulonnais">
+        <img src="assets/logos/jardins.png" alt="Les Jardins du Boulonnais">
+        <img src="assets/logos/bulles.png" alt="Bulles d'Opale">
+        <img src="assets/logos/nicole.png" alt="Nicole, artisan glacier">
       </div>
     </div>
   </section>
@@ -409,9 +420,9 @@ footer a{color:var(--orange)}
       <p class="eyebrow">Ils nous soutiennent</p>
       <h2 style="margin-top:10px">Nos partenaires et financeurs</h2>
       <div class="logos">
-        <span class="chip">ESAT du Boulonnais</span>
+        <img src="assets/logos/esat.png" alt="ESAT du Boulonnais">
+        <img src="assets/logos/cab.png" alt="Communauté d'agglomération du Boulonnais">
         <span class="chip">Région Hauts-de-France</span>
-        <span class="chip">Communauté d'agglomération du Boulonnais</span>
         <span class="chip">Bpifrance</span>
         <span class="chip">Réseau Initiative</span>
         <span class="chip">CréActif</span>
@@ -433,12 +444,18 @@ footer a{color:var(--orange)}
 <script>
 (function(){
   if(!window.L) return;
-  var centre=[50.6893,1.6233]; // Saint-Léonard : position approximative, à remplacer par celle de l'ESAT
-  var map=L.map('carte',{scrollWheelZoom:false,attributionControl:true}).setView(centre,9);
+  var esat=[50.6905,1.6190]; // 76 bd de la Liane, Saint-Léonard
+  var villes=[["Calais",[50.9513,1.8587]],["Saint-Omer",[50.7500,2.2520]],["Berck",[50.4085,1.5928]]];
+  var map=L.map('carte',{scrollWheelZoom:false});
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap'}).addTo(map);
-  var c=L.circle(centre,{radius:25000,color:'#4e8da3',weight:3,fillColor:'#dbecdf',fillOpacity:.35}).addTo(map);
-  L.marker(centre,{icon:L.divIcon({className:'lm-pin',iconSize:[22,22]})}).addTo(map).bindPopup("<b>Lave-Moi !</b><br>ESAT du Boulonnais, Saint-Léonard");
-  map.fitBounds(c.getBounds(),{padding:[10,10]});
+  var tri=L.polygon(villes.map(function(v){return v[1]}),{color:'#4e8da3',weight:3,dashArray:'8 6',fillColor:'#a5d3b7',fillOpacity:.3}).addTo(map);
+  villes.forEach(function(v){
+    L.circleMarker(v[1],{radius:6,color:'#fff',weight:2,fillColor:'#4e8da3',fillOpacity:1}).addTo(map)
+      .bindTooltip(v[0],{permanent:true,direction:'top',offset:[0,-6],className:'lm-ville'});
+  });
+  L.marker(esat,{icon:L.divIcon({className:'lm-pin',iconSize:[24,24]})}).addTo(map)
+    .bindTooltip("Lave-Moi ! · ESAT du Boulonnais",{permanent:true,direction:'right',offset:[10,0],className:'lm-ville lm-esat'});
+  map.fitBounds(tri.getBounds(),{paddingTopLeft:[40,50],paddingBottomRight:[40,30]});
 })();
 </script>
 </body>
