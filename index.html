@@ -212,6 +212,11 @@ footer a{color:var(--orange)}
 .logos .chip{background:var(--blanc);border:1px solid var(--vert);padding:12px 20px;font-size:1rem}
 .soutiens{background:var(--blanc);padding-block:56px}
 .mention{margin-top:22px;font-size:.92rem;max-width:60em}
+.laureat{margin-top:28px;display:flex;gap:28px;align-items:center;background:var(--gris-vert);border-radius:var(--r);padding:22px 24px}
+.laureat img{width:150px;height:150px;flex:none;border-radius:12px;background:#fff}
+.laureat-titre{font-weight:700;font-size:1.1rem;margin-block:6px 8px;color:var(--encre)}
+.laureat p{margin:0}
+@media (max-width:560px){.laureat{flex-direction:column;align-items:flex-start}}
 </style>
 
 <link rel="stylesheet" href="assets/leaflet/leaflet.css">
@@ -440,6 +445,14 @@ footer a{color:var(--orange)}
     <div class="wrap">
       <p class="eyebrow">Ils nous soutiennent</p>
       <h2 style="margin-top:10px">Nos partenaires et financeurs</h2>
+      <div class="laureat">
+        <img src="assets/laureat-ami-commerce.jpg" alt="Lauréat de l'AMI « Accélérer la transition circulaire des commerces », République française et Conseil National du Commerce" width="150" height="150" loading="lazy">
+        <div>
+          <p class="eyebrow">Distinction</p>
+          <p class="laureat-titre">Lave-Moi ! est lauréat de l'AMI «&nbsp;Accélérer la transition circulaire des commerces&nbsp;»</p>
+          <p>Notre projet a été retenu dans le cadre de cet appel à manifestation d'intérêt porté par l'État et le Conseil National du Commerce.</p>
+        </div>
+      </div>
       <div class="logos">
         <img src="assets/logos/esat.png" alt="ESAT du Boulonnais">
         <img src="assets/logos/cab.png" alt="Communauté d'agglomération du Boulonnais">
